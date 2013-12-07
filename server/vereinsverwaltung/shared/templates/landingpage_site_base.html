@@ -35,14 +35,13 @@
 
     <!-- Wrap all page content here -->
     <div id="wrap">
-
     {% include "landingpage_header.html" %}
-    <div class="container">
-        {% block main_content %}{% endblock %}
+        <div class="container">
+            {% block main_content %}{% endblock %}
+        </div>
     </div>
-
     {% include "landingpage_footer.html" %}
-
+    
     {% block extra_js %}{% endblock %}
 
     <!-- Bootstrap core JavaScript
