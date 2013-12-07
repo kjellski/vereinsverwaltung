@@ -15,6 +15,7 @@
 
     <!-- Custom styles for this template -->
     <link href="{{ STATIC_URL }}css/sticky-footer-navbar.css" rel="stylesheet">
+    <link href="{{ STATIC_URL }}css/signin.css" rel="stylesheet">
     <link href="{{ STATIC_URL }}css/main.css" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy this line! -->
@@ -34,14 +35,13 @@
 
     <!-- Wrap all page content here -->
     <div id="wrap">
-
     {% include "landingpage_header.html" %}
-    <div class="container">
-        {% block main_content %}{% endblock %}
+        <div class="container">
+            {% block main_content %}{% endblock %}
+        </div>
     </div>
-
     {% include "landingpage_footer.html" %}
-
+    
     {% block extra_js %}{% endblock %}
 
     <!-- Bootstrap core JavaScript
