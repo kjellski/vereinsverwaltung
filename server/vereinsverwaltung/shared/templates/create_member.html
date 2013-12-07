@@ -14,28 +14,39 @@
         <form role="form">
                 <div class="form-group">
                  <label>Mitglied</label>
-                 <input type="text" class="form-control" id="name" placeholder="Name">
-                 <input type="text" class="form-control" id="lastname" placeholder="Nachname">
-                 <input type="text" class="form-control" id="phone" placeholder="Tel.">
-                 <input type="email" class="form-control" id="email" placeholder="E-Mail">
+                 <input type="text" class="form-control" id="name" placeholder="Name" name="{{ form.forename.html_name }}" value="{{ 
+form.forename.value|default_if_none:"" }}">
+                 <input type="text" class="form-control" id="lastname" placeholder="Nachname" name="{{ form.surname.html_name }}" value="{{ 
+form.surname.value|default_if_none:"" }}">
+                 <input type="text" class="form-control" id="phone" placeholder="Tel." name="{{ form.phone.html_name }}" value="{{ 
+form.phone.value|default_if_none:"" }}">
+                 <input type="email" class="form-control" id="email" placeholder="E-Mail" name="{{ form.email.html_name }}" value="{{ 
+form.email.value|default_if_none:"" }}">
                  </div>
 
 
          <div class="form-group">
          <label>Adresse</label>
-         <input type="text" class="form-control" id="street" placeholder="Straße">
-         <input type="text" class="form-control" id="number" placeholder="Hausnummer">
-         <input type="text" class="form-control" id="plz" placeholder="PLZ">
-         <input type="text" class="form-control" id="city" placeholder="Ort">
-         <input type="text" class="form-control" id="country" placeholder="Land">
+         <input type="text" class="form-control" id="street" placeholder="Straße" name="{{ form.street.html_name }}" value="{{ 
+form.street.value|default_if_none:"" }}">
+         <input type="text" class="form-control" id="number" placeholder="Hausnummer" name="{{ form.number.html_name }}" value="{{ 
+form.number.value|default_if_none:"" }}">
+         <input type="text" class="form-control" id="plz" placeholder="PLZ" name="{{ form.plz.html_name }}" value="{{ form.plz.value|default_if_none:"" 
+}}">
+         <input type="text" class="form-control" id="city" placeholder="Ort" name="{{ form.city.html_name }}" value="{{ form.city.value|default_if_none:"" 
+}}" >
+         <input type="text" class="form-control" id="country" placeholder="Land" name="{{ form.country.html_name }}" value="{{ 
+form.country.value|default_if_none:"" }}">
          </div>
 
          <hr>
          
          <div class="form-group">
          <label>Zahlungsdaten</label>
-         <input type="text" class="form-control" id="iban" placeholder="IBAN">
-         <input type="text" class="form-control" id="bic" placeholder="BIC">
+         <input type="text" class="form-control" id="iban" placeholder="IBAN" name="{{ form.iban.html_name }}" value="{{ 
+form.iban.value|default_if_none:"" }}">
+         <input type="text" class="form-control" id="bic" placeholder="BIC" name="{{ form.bic.html_name }}" value="{{ form.bic.value|default_if_none:"" 
+}}">
          </div>
          
          <div class="form-group">
@@ -45,8 +56,11 @@
          </div>
          
          <div class="form-group">
-         <input type="text" class="form-control" id="next_pay_date" placeholder="N&auml;chster Zahlungstermin">
-         <input type="text" class="form-control" id="yearly_amount" placeholder="Jahresbeitrag">
+         <input type="text" class="form-control" id="next_pay_date" placeholder="N&auml;chster Zahlungstermin" name="{{ form.next_pay_date.html_name }}" 
+value="{{ 
+form.next_pay_date.value|default_if_none:"" }}">
+         <input type="text" class="form-control" id="yearly_amount" placeholder="Jahresbeitrag" name="{{ form.yearly_amount.html_name }}" value="{{ 
+form.yearly_amount.value|default_if_none:"" }}">
          </div>
 
          <button type="submit" class="btn btn-default">Eintragen</button>
