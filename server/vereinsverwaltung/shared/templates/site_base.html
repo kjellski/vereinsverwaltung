@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}{% endblock %}</title>
+
+    <meta charset="utf-8"/>
+
+    <link rel="icon" type="image/png" href="{{ STATIC_URL }}img/favicon.png"/>
+
+    {# CSS libraries #}
+    <link href="{{ STATIC_URL }}css/bootstrap.css" rel="stylesheet"/>
+
+    {# Custom CSS styles #}
+    <link href="{{ STATIC_URL }}css/admin_styles.css" rel="stylesheet"/>
+
+    {# JS libraries #}
+    <script type="text/javascript" src="{{ STATIC_URL }}js/jquery-1.9.0.min.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
+    {# Extra head tags #}
+    {% block html_head %}{% endblock %}
+</head>
+
+<body>
+
+{% include "admin_header.html" %}
+<div class="container" style="width: 1170px; margin-top: 50px; clear: both">
+    {% block main_content %}{% endblock %}
+</div>
+{% include "admin_footer.html" %}
+
+{% block extra_js %}{% endblock %}
+
+</body>
+</html>

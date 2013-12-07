@@ -1,9 +1,11 @@
+import os
 # Django settings for settings project.
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
+    # 
     # ('Your Name', 'your_email@example.com'),
 )
 
@@ -20,6 +22,13 @@ DATABASES = {
         'PORT': '',                      # Set to empty string for default.
     }
 }
+
+
+
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+STATIC_CONTENT_ROOT = os.path.join(os.path.dirname(os.path.dirname(PROJECT_ROOT)), 'static_content')
+LOGS_ROOT = os.path.join(os.path.dirname(os.path.dirname(PROJECT_ROOT)), 'logs')
+
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
@@ -48,24 +57,11 @@ USE_L10N = True
 # If you set this to False, Django will not use timezone-aware datetimes.
 USE_TZ = True
 
-# Absolute filesystem path to the directory that will hold user-uploaded files.
-# Example: "/var/www/example.com/media/"
-MEDIA_ROOT = ''
-
-# URL that handles the media served from MEDIA_ROOT. Make sure to use a
-# trailing slash.
-# Examples: "http://example.com/media/", "http://media.example.com/"
-MEDIA_URL = ''
-
-# Absolute path to the directory static files should be collected to.
-# Don't put anything in this directory yourself; store your static files
-# in apps' "static/" subdirectories and in STATICFILES_DIRS.
-# Example: "/var/www/example.com/static/"
-STATIC_ROOT = ''
-
-# URL prefix for static files.
-# Example: "http://example.com/static/", "http://static.example.com/"
+MEDIA_ROOT = os.path.join(STATIC_CONTENT_ROOT, 'media')
+MEDIA_URL = '/media/'
+STATIC_ROOT = os.path.join(STATIC_CONTENT_ROOT, 'static')
 STATIC_URL = '/static/'
+
 
 # Additional locations of static files
 STATICFILES_DIRS = (
@@ -111,6 +107,8 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
+    os.path.join(PROJECT_ROOT, 'shared/templates')
+
 )
 
 INSTALLED_APPS = (
@@ -122,7 +120,11 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'south',
     # Uncomment the next line to enable the admin:
-    # 'django.contrib.admin',
+    'django.contrib.admin',
+    'users',
+    'members',
+    'organisations',
+    'shared',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
 )
