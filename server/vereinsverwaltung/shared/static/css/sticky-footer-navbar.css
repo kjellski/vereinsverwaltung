@@ -23,3 +23,7 @@ body {
   border-top: 1px solid #E7E7F0;
   background-color: #F8F8F8;
 }
+
+#wrap > .container {
+  padding: 60px 15px 0;
+}
