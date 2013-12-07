@@ -1,0 +1,56 @@
+{% extends "landingpage_site_base.html" %}
+
+{% block title %}Register{% endblock %}
+
+{% block html_head %}
+        <meta name="robots" content="index, follow, noarchive">
+{% endblock %}
+
+{% block main_content %}
+
+<div class="col-md-offset-4 col-md-4">
+                
+        <h2>Mitglied eintragen</h2>
+        <form role="form">
+                <div class="form-group">
+                 <label>Mitglied</label>
+                 <input type="text" class="form-control" id="name" placeholder="Name">
+                 <input type="text" class="form-control" id="lastname" placeholder="Nachname">
+                 <input type="text" class="form-control" id="phone" placeholder="Tel.">
+                 <input type="email" class="form-control" id="email" placeholder="E-Mail">
+                 </div>
+
+
+         <div class="form-group">
+         <label>Adresse</label>
+         <input type="text" class="form-control" id="street" placeholder="Straße">
+         <input type="text" class="form-control" id="number" placeholder="Hausnummer">
+         <input type="text" class="form-control" id="plz" placeholder="PLZ">
+         <input type="text" class="form-control" id="city" placeholder="Ort">
+         <input type="text" class="form-control" id="country" placeholder="Land">
+         </div>
+
+         <hr>
+         
+         <div class="form-group">
+         <label>Zahlungsdaten</label>
+         <input type="text" class="form-control" id="iban" placeholder="IBAN">
+         <input type="text" class="form-control" id="bic" placeholder="BIC">
+         </div>
+         
+         <div class="form-group">
+         <label>Zahlungsweise</label>
+         <input type="radio" name="Zahlungsweise" id="payment" value="Lastschrift">Lastschrift
+         <input type="radio" name="Zahlungsweise" id="payment" value="Überweisung">&Uuml;berweisung
+         </div>
+         
+         <div class="form-group">
+         <input type="text" class="form-control" id="next_pay_date" placeholder="N&auml;chster Zahlungstermin">
+         <input type="text" class="form-control" id="yearly_amount" placeholder="Jahresbeitrag">
+         </div>
+
+         <button type="submit" class="btn btn-default">Eintragen</button>
+        </form>
+</div>
+
+{% endblock %}i
